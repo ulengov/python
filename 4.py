@@ -7,4 +7,7 @@ while num // 10 >0:
         max = num % 10
     num = num //10
 
+if num > max:
+    max = num
+
 print(max)
