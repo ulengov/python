@@ -1,22 +1,22 @@
 class Stationery:
-    title = 'Канцтовары'
+
+    def __init__(self, title = 'Stationery'):
+        self.title = title
+
     def draw(self):
-        print('Запуск отрисовки')
+        print(f'Запуск отрисовки {self.title}')
 
 class Pen(Stationery):
-    title = 'Ручка'
     def draw(self):
-        print('Рисуем ручкой')
+        print(f'Рисуем ручкой {self.title}')
 
 class Pencil(Stationery):
-    title = 'Карандаш'
     def draw(self):
-        print('Рисуем карандашом')
+        print(f'Рисуем карандашом {self.title}')
 
 class Handle(Stationery):
-    title = 'Маркер'
     def draw(self):
-        print('Рисуем маркером')
+        print(f'Рисуем маркером {self.title}')
 
 stationery = Stationery()
 pen = Pen()

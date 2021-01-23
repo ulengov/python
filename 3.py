@@ -11,7 +11,7 @@ class Position(Worker):
         return self.name + ' ' + self.surname
 
     def get_total_income(self):
-        return self._income['wage'] + self._income['bonus']
+        return sum(self._income.values())
 
 work = Worker("Иван", "Петров", "Директор", 200, 20)
 
