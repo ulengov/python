@@ -2,6 +2,9 @@ from abc import ABC, abstractmethod
 
 class Odezda(ABC):
 
+    def __init__(self, param):
+        self.param = param
+
     @abstractmethod
     def rashod(self):
         pass
@@ -9,9 +12,6 @@ class Odezda(ABC):
 class Palto(Odezda):
 
     name = 'Пальто'
-
-    def __init__(self, param):
-        self.param = param
 
     @property
     def param(self):
@@ -26,15 +26,13 @@ class Palto(Odezda):
         else:
             self.__xyz = param
 
+    @property
     def rashod(self):
         return self.param/6.5 + 0.5
 
 class Costum(Odezda):
 
     name = 'Костюм'
-
-    def __init__(self, param):
-        self.param = param
 
     @property
     def param(self):
@@ -49,11 +47,12 @@ class Costum(Odezda):
         else:
             self.__xyz = param
 
+    @property
     def rashod(self):
         return self.param*2 + 0.3
 
 a = Palto(46)
 b = Costum(1.75)
 
-print(f'{a.name} размер {a.param} расход {round(a.rashod(),2)} метров')
-print(f'{b.name} рост {b.param} расход {round(b.rashod(),2)} метров')
+print(f'{a.name} размер {a.param} расход {round(a.rashod,2)} метров')
+print(f'{b.name} рост {b.param} расход {round(b.rashod,2)} метров')

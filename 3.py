@@ -19,18 +19,7 @@ class Cell():
         return Cell(self.count // other.count)
 
     def make_order(self, line):
-        xyz = self.count
-        res = ''
-        while (xyz // line) > 0:
-            for _ in range(0, line):
-                res = res + '*'
-            res = res + '\n'
-            xyz -= line
-        if xyz > 0:
-            for _ in range(0, xyz):
-                res = res + '*'
-            res = res + '\n'
-        return res
+        return '\n'.join((['*' * line for _ in range(self.count // line)]))  + '\n'  + '*' * (self.count % line)  + '\n'
 
 c1 = Cell(6)
 c2 = Cell(4)
